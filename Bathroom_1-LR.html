@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>360 Photo with A-Frame</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <style>
@@ -21,7 +21,7 @@
 </head>
 <body>
     <a-scene embedded vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-        <a-camera position="0 1.6 0" fov="85" look-controls></a-camera>
+        <a-camera position="0 1.6 0" fov="85" look-controls="reverseMouseDrag: true;"></a-camera>
         <a-sky src="https://jrbdesignstudio.github.io/Project_360-Images/Bathroom_1-LR.jpg" rotation="0 40 0"></a-sky>
     </a-scene>
 </body>
