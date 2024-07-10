@@ -26,11 +26,14 @@
   <body>
     <a-scene
       embedded
+      vr-mode-ui="enabled: true"
+      device-orientation-permission-ui="enabled: true"
     >
       <a-camera
         position="0 1.6 0"
         fov="80"
-  
+        look-controls="reverseMouseDrag: true; touchEnabled: true; 
+                       magicWindowTrackingEnabled: true"
       ></a-camera>
       <a-sky
         src="https://jrbdesignstudio.github.io/Project_360-Images/Bathroom_1-LR.jpg"
