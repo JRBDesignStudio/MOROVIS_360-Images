@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>360 Photo with A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        a-scene {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <a-scene device-orientation-permission-ui>
+        <a-camera position="0 1.6 0" fov="85"></a-camera>
+        <a-sky src="https://jrbdesignstudio.github.io/Project_360-Images/Bathroom_1-LR.jpg" rotation="0 35 0"></a-sky>
+    </a-scene>
+</body>
+</html>
