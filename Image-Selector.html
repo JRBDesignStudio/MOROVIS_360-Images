@@ -1,1 +1,84 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>360 Photo with A-Frame</title>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #imageSelector {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+      }
+      a-scene {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imageSelector">
+      <select id="imageDropdown" onchange="loadImage()">
+        <option value="1-Entrance-Exterior.jpg">Front Balcony View</option>
+        <option value="2-Entrance.jpg">Entrance</option>
+        <option value="3-Living-Room.jpg">Living Room</option>
+        <option value="4-Dining-Room.jpg">Dining Room</option>
+        <option value="5-Wet-Bar.jpg">Wet Bar</option>
+        <option value="6-Laundry-Room.jpg">Laundry</option>
+        <option value="7-Kitchen.jpg">Kitchen</option>
+        <option value="8-Terrace.jpg">Terrace</option>
+        <option value="9-Closet.jpg">Closet</option>
+        <option value="10-Under-Stair.jpg">Under Stair Storage</option>
+        <option value="11-Bathroom-1.jpg">Bathroom 1</option>
+        <option value="12-Bedroom-1.jpg">Bedroom 1</option>
+        <option value="13-Bathroom-2.jpg">Bathroom 2</option>
+        <option value="14-Bedroom-2.jpg">Bedroom 2</option>
+        <option value="15-Stair-1.jpg">Stair Bottom</option>
+        <option value="16-Stair-2.jpg">Stair Top</option>
+        <option value="17-Mezzanine-Bathroom.jpg">Mezzanine Bathroom</option>
+        <option value="18-Mezzanine.jpg">Mezzanine</option>
+        <option value="19-Mezzanine-View.jpg">Mezzanine View</option>
+        <option value="20-Hangar.jpg">Hangar</option>
+        <option value="21-Hangar-Bathroom.jpg">Hangar Bathroom</option>
+      </select>
+    </div>
+    <a-scene>
+      <a-camera
+        position="0 1.6 0"
+        fov="90"
+        look-controls="reverseMouseDrag: true; touchEnabled: true;"
+      ></a-camera>
+      <a-sky id="skybox" src="" rotation="0 40 0"></a-sky>
+    </a-scene>
 
+    <script>
+      function loadImage() {
+        var dropdown = document.getElementById("imageDropdown");
+        var selectedImage = dropdown.value;
+        var sky = document.getElementById("skybox");
+        sky.setAttribute(
+          "src",
+          "https://jrbdesignstudio.github.io/CACIQUE2213_360-IMAGES/" +
+            selectedImage
+        );
+      }
+
+      // Load the default image on page load
+      window.onload = function () {
+        loadImage();
+      };
+    </script>
+  </body>
+</html>
